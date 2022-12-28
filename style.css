@@ -1,0 +1,87 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: hsl(0, 0%, 98%);
+    color: color: hsl(234, 12%, 34%);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;    /* small gap between header and main */
+}
+
+/* set the flex-settings, font size, and width of the header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    max-width: 30%;
+    text-align: center;
+}
+
+header div:nth-child(1) {
+    color: hsl(234, 12%, 34%);
+}
+/* the second paragraph in the header */
+header div:nth-child(2) {
+    color: hsl(234, 12%, 34%);
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+header div:nth-child(3) {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: hsl(229, 6%, 66%);
+}
+
+/* Separate the 3 sections into a flex-row, give them a gap in-between*/
+main {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Set the view width */
+.section-left, .section-middle, .section-right {
+    max-width: 25vw;
+}
+
+/* Seperate the middle section in an upper and lower section in column form */
+.section-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+/* Set the borders, and colors for all 4 sections */
+.section-left, .section-middle-low, .section-middle-high, .section-right {
+    border: black solid 4px;
+    border-radius: 0.7rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Set the first line of text in each of the 4 sections to bold */
+section div:first-child {
+    font-weight: 800;
+}
+
+/* Set the second line of text in each of the 4 sections to be smaller */
+section div:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+/* Set the image on the third line in each of the 4 sections to the right */
+section div:nth-child(3) {
+    margin-left: auto;
+}
