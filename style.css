@@ -47,28 +47,46 @@ header div:nth-child(3) {
 main {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 3rem;
 }
 
 /* Set the view width */
 .section-left, .section-middle, .section-right {
-    max-width: 25vw;
+    width: 25vw;
 }
 
 /* Seperate the middle section in an upper and lower section in column form */
 .section-middle {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    align-items: center;
+    gap: 3rem;
 }
 
-/* Set the borders, and colors for all 4 sections */
+/* All 4 sections will get an unique color */
+.section-left {
+    border-top: hsl(180, 62%, 55%) solid 0.3rem;
+}
+.section-middle-high {
+    border-top: hsl(0, 78%, 62%) solid 0.3rem;
+}
+.section-middle-low {
+    border-top: hsl(34, 97%, 64%) solid 0.3rem;
+}
+.section-right {
+    border-top: hsl(212, 86%, 64%) solid 0.3rem;
+}
+
+/* Set the gaps, padding, colors for all 4 sections */
 .section-left, .section-middle-low, .section-middle-high, .section-right {
-    border: black solid 4px;
-    border-radius: 0.7rem;
-    background-color: white;
     display: flex;
     flex-direction: column;
+    border-radius: 0.7rem;
+    background-color: white;
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: 0.3rem 0.3rem 6px rgb(129, 128, 128, 0.3);
 }
 
 /* Set the first line of text in each of the 4 sections to bold */
@@ -81,7 +99,25 @@ section div:nth-child(2) {
     font-size: 0.8rem;
 }
 
-/* Set the image on the third line in each of the 4 sections to the right */
+/* Set the image on the third line in each of the 4 sections to the right and add some margin to the top */
 section div:nth-child(3) {
     margin-left: auto;
+    margin-top: 0.5rem;
+}
+
+/* MEDIA QUERY: make the header and sections larger if the viewport decreases in size */
+@media (max-width: 850px) {
+    header {
+        max-width: 80%;
+    }
+    .section-left, .section-middle, .section-middle-high, .section-middle-low, .section-right {
+        width: 80vw;
+    }
+    main {
+        flex-direction: column;
+    }
+    /* Add a bit of margin under the last section for a bit of bottom space */
+    .section-right {
+        margin-bottom: 2rem;
+    }
 }
